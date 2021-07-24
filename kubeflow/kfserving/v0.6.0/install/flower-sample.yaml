@@ -1,0 +1,95 @@
+apiVersion: serving.kubeflow.org/v1beta1
+kind: InferenceService
+metadata:
+  creationTimestamp: "2021-07-24T09:40:24Z"
+  finalizers:
+  - inferenceservice.finalizers
+  generation: 1
+  managedFields:
+  - apiVersion: serving.kubeflow.org/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:predictor:
+          .: {}
+          f:tensorflow:
+            .: {}
+            f:storageUri: {}
+    manager: Swagger-Codegen
+    operation: Update
+    time: "2021-07-24T09:40:22Z"
+  - apiVersion: serving.kubeflow.org/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers: {}
+      f:spec:
+        f:predictor:
+          f:containers: {}
+          f:tensorflow:
+            f:args: {}
+            f:command: {}
+            f:image: {}
+      f:status:
+        .: {}
+        f:components:
+          .: {}
+          f:predictor:
+            .: {}
+            f:latestCreatedRevision: {}
+            f:latestReadyRevision: {}
+            f:latestRolledoutRevision: {}
+            f:traffic: {}
+        f:conditions: {}
+    manager: manager
+    operation: Update
+    time: "2021-07-24T09:42:25Z"
+  name: flower-sample
+  namespace: default
+  resourceVersion: "516451"
+  uid: d86fdd0d-0f0f-4fdc-aa72-671e556b7f91
+spec:
+  predictor:
+    tensorflow:
+      name: kfserving-container
+      resources:
+        limits:
+          cpu: "1"
+          memory: 2Gi
+        requests:
+          cpu: "1"
+          memory: 2Gi
+      runtimeVersion: 1.14.0
+      storageUri: gs://kfserving-samples/models/tensorflow/flowers
+status:
+  components:
+    predictor:
+      latestCreatedRevision: flower-sample-predictor-default-jlqz5
+      latestReadyRevision: flower-sample-predictor-default-jlqz5
+      latestRolledoutRevision: flower-sample-predictor-default-jlqz5
+      traffic:
+      - latestRevision: true
+        percent: 100
+        revisionName: flower-sample-predictor-default-jlqz5
+  conditions:
+  - lastTransitionTime: "2021-07-24T09:42:25Z"
+    message: Ingress has not yet been reconciled.
+    reason: IngressNotConfigured
+    severity: Info
+    status: Unknown
+    type: PredictorConfigurationReady
+  - lastTransitionTime: "2021-07-24T09:42:25Z"
+    message: Ingress has not yet been reconciled.
+    reason: IngressNotConfigured
+    status: Unknown
+    type: PredictorReady
+  - lastTransitionTime: "2021-07-24T09:42:24Z"
+    severity: Info
+    status: "True"
+    type: PredictorRouteReady
+  - lastTransitionTime: "2021-07-24T09:42:25Z"
+    message: Ingress has not yet been reconciled.
+    reason: IngressNotConfigured
+    status: Unknown
+    type: Ready
