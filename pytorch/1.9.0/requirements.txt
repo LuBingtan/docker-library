@@ -36,7 +36,6 @@ Pygments
 pyOpenSSL
 pyparsing==2.4.7
 PySocks
-python
 pytz
 pyzmq==20.0.0
 requests
